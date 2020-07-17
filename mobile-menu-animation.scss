@@ -1,0 +1,176 @@
+#block-mitrehr-d8-main-menu, #block-mainnavigation {
+    padding-top: 0;
+  }
+  #navbar-main {
+    border-bottom: none;
+}
+  .navbar {
+    border-top: 1px solid white;
+    //menu skin
+    ul.sf-menu.sf-accordion.sf-accordion-with-buttons .sf-accordion-button::after {
+      content: "▲";
+      margin: 0 0 0 1em;
+      color: white;
+    }
+    ul.sf-menu.sf-accordion.sf-accordion-with-buttons li.sf-expanded > .sf-accordion-button::after {
+      content: "▼";
+    }
+    #superfish-main-accordion, #superfish-main--2-accordion {
+      li.sf-depth-2.menuparent,
+      li.sf-depth-3.menuparent,
+      li.sf-depth-4.menuparent {
+        border-bottom: none;
+      }
+      li.menuparent {
+        border-bottom: 1px solid #aeabab61;
+        &:last-child {
+          border-bottom: none;
+        }
+        a {
+          color: white;
+          text-decoration: none;
+          font-family: "Trade Gothic LT W01 Bold", sans-serif;
+          transition: all .25s ease-in;
+          background: transparent;
+          &:active, &:focus {
+            background: $dark-navy;
+          }
+        }
+        .sf-accordion-button {
+          display: inline-block;
+          position: absolute;
+          right: 0;
+          z-index: 1000;
+          color: transparent;
+          &:active, &:focus {
+            background: transparent;
+          }
+        }
+      }
+      li.sf-expanded {
+        .sf-depth-1 {
+          background: $dark-navy;
+        }
+      }
+      li.sf-expanded.sf-depth-2 {
+        a.sf-depth-2 {
+          background: $dark-navy;
+          border-top: #0A1F33 solid 1px;
+        }
+      }
+      li.sf-expanded.sf-depth-3 {
+        a.sf-depth-3 {
+          background: $dark-navy;
+          border-top: #0A1F33 solid 1px;
+        }
+      }
+      li.sf-expanded.sf-depth-4 {
+        a.sf-depth-4 {
+          background: $dark-navy;
+          border-top: #0A1F33 solid 1px;
+        }
+      }
+      li {
+        a.sf-depth-2 {
+          border-top: transparent solid 1px;
+        }
+      }
+      li {
+        a.sf-depth-3 {
+          border-top: transparent solid 1px;
+        }
+      }
+      li {
+        a.sf-depth-4 {
+          border-top: transparent solid 1px;
+        }
+      }
+      li {
+        a.sf-depth-2, a.sf-depth-3, a.sf-depth-4 {
+          &:hover {
+            background: $dark-navy;
+          }
+        }
+        a.sf-depth-2 {
+          padding-left: 2rem;
+        } 
+        a.sf-depth-3 {
+          padding-left: 3rem;
+        } 
+        a.sf-depth-4 {
+          padding-left: 4rem;
+        } 
+        a.sf-depth-5 {
+          padding-left: 5rem;
+        }
+        ul {
+          background: $mitre-blue;
+        }
+      }
+    }
+    //hamburger animation start
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    .navbar-toggler {
+      border: none;
+      width: 30px;
+      height: 24px;
+      display: inline-block;
+      position: relative;
+      outline: none;
+      padding: 31px 0 0 0;
+      margin-right: .5em;
+      span, span:before, span:after {
+        width: 30px;
+        height: 4px;
+        background-color: white;
+        border-radius: 4px;
+        position: absolute;
+        transition-property: transform;
+        left: 0;
+      }
+      span:before, span:after {
+        content: '';
+        display: block;
+      }
+      span {
+        text-indent: -9999px;
+        top: auto;
+        bottom: 0;
+        transition-duration: 0.13s;
+        transition-delay: 0.13s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        &:before {
+          transition: top 0.12s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), transform 0.13s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+          top: -10px;
+        }
+        &:after {
+          top: -20px;
+          transition: top 0.2s 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1), opacity 0.1s linear;
+        }
+      }
+    }
+    .navbar-toggler[aria-expanded="true"] {
+      background-color: transparent;
+      span {
+        transform: translate3d(0, -10px, 0) rotate(-45deg);
+        transition-delay: 0.22s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+        background-color: white;
+        &:before {
+          background-color: white;
+          top: 0;
+          transform: rotate(-90deg);
+          transition: top 0.1s 0.16s cubic-bezier(0.33333, 0, 0.66667, 0.33333), transform 0.13s 0.25s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+        &:after {
+          background: white;
+          top: 0;
+          opacity: 0;
+          transition: top 0.2s cubic-bezier(0.33333, 0, 0.66667, 0.33333), opacity 0.1s 0.22s linear;
+        }
+      }
+    }
+  }
+}
